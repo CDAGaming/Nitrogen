@@ -39,8 +39,8 @@ public abstract class NitrogenLanguageProvider extends LanguageProvider {
         this.add("menu." + this.id + "." + key, name);
     }
 
-    public void addCreativeTab(CreativeModeTab tab, String name) {
-        this.add(tab.getDisplayName().getString(), name);
+    public void addCreativeTab(Supplier<CreativeModeTab> tab, String name) {
+        this.add(tab.get().getDisplayName().getString(), name);
     }
 
     public void addAdvancement(String key, String name) {
